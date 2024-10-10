@@ -1,4 +1,6 @@
 # ShowroomAuto
+![1](https://github.com/user-attachments/assets/5512cb44-0c3c-4ba9-86a6-b9e94d244555)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
 
