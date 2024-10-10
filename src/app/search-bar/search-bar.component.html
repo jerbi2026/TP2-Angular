@@ -1,0 +1,43 @@
+<div class="input_container">
+    <p>Brand</p>
+    <input type="text" [(ngModel)]="carBrand">
+    <button (click)="searchAutoList()">Search</button>
+</div>
+
+<div *ngIf="filteredAutos && filteredAutos.length > 0">
+    <div *ngFor="let auto of filteredAutos" class="container" style="margin-bottom: 20px;">
+      <div style="width: 100%;">
+        <div class="center">
+          <p class="model">{{ auto.model }}</p>
+          <a style="margin-left: 20px; cursor: pointer;" (click)="viewMore(auto)">View more ...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="selectedAuto" class="container">
+    <div style="width: 100%;">
+      <div class="center">
+        <p class="model">{{ selectedAuto.model }}</p>
+        <a style="cursor: pointer;" (click)="backToList()">Back to list</a>
+      </div>
+      <h3>Marque</h3>
+      <hr>
+      <h4 class="h4_text">{{ selectedAuto.marque }}</h4>
+      <h3 class="h3_style">Model</h3>
+      <hr>
+      <h4 class="h4_text">{{ selectedAuto.model }}</h4>
+      <h3 class="h3_style">Price</h3>
+      <hr>
+      <h4 class="h4_text">{{ selectedAuto.price }}</h4>
+      <h3 class="h3_style">Power</h3>
+      <hr>
+      <h4 class="h4_text">{{ selectedAuto.puissance }}</h4>
+    </div>
+    <div>
+      <img class="img_cont"
+        [src]="'../photos/' + selectedAuto.image"
+        [alt]="selectedAuto.model">
+    </div>
+    
+  </div>
